@@ -8,25 +8,27 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout llama.cpp
-      uses: actions/checkout@v3
-      with:
-        repository: ggerganov/llama.cpp
-        submodules: true
+      - name: Checkout llama.cpp
+        uses: actions/checkout@v3
+        with:
+          repository: ggerganov/llama.cpp
+          submodules: true
 
-    - name: Set up MSVC
-      uses: ilammy/msvc-dev-cmd@v1
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1
 
-    - name: Install CMake
-      uses: jwlawson/actions-setup-cmake@v1
+      - name: Install CMake
+        uses: jwlawson/actions-setup-cmake@v1
 
-    - name: Configure and Build
-      run: |
-        cmake -S . -B build -DLLAMA_CUBLAS=on -DCMAKE_BUILD_TYPE=Release
-        cmake --build build --config Release
+      - name: Configure with CMake
+        run: cmake -S . -B build -DLLAMA_CUBLAS=on -DCMAKE_BUILD_TYPE=Release
 
-    - name: Upload DLL artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: llama.dll
-        path: build/bin/Release/llama.dll
+      - name: Build llama.dll
+        run: cmake --build build --config Release
+
+      - name: Upload llama.dll
+        uses: actions/upload-artifact@v3
+        with:
+          name: llama-dll
+          path: build/Release/llama.dll
+
