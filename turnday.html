@@ -20,7 +20,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--foam); color: var(--text); }
 
-  /* PIN screen */
   #pin-screen {
     position: fixed; inset: 0; background: var(--deep);
     display: flex; align-items: center; justify-content: center;
@@ -40,7 +39,6 @@
   }
   #pin-error { color: var(--coral); font-size: .9rem; min-height: 1.2em; }
 
-  /* Main */
   #main { display: none; padding-bottom: 40px; }
   .page-header {
     background: var(--deep); color: #fff;
@@ -53,14 +51,12 @@
   .page-header .date { font-size: .8rem; color: #9abcca; }
   .sp-logo { font-size: 1.6rem; }
 
-  /* Section headers */
   .section-label {
     background: var(--ocean); color: #fff;
     padding: 8px 16px; font-size: .75rem; font-weight: 700;
     letter-spacing: .08em; text-transform: uppercase;
   }
 
-  /* Overview block */
   .overview {
     background: var(--deep); color: #e0eff5;
     padding: 14px 16px; font-size: .88rem; line-height: 1.6;
@@ -75,7 +71,6 @@
   }
   .overview .standby strong { color: var(--amber); }
 
-  /* Property cards */
   .card {
     margin: 12px; background: #fff;
     border-radius: 10px; overflow: hidden;
@@ -103,8 +98,8 @@
   .info-val { flex: 1; line-height: 1.4; }
   .info-val.code { font-family: monospace; font-size: .95rem; font-weight: 700; color: var(--deep); letter-spacing: .04em; }
   .info-val.crew { font-weight: 600; color: var(--ocean); }
+  .info-val.crew-tbd { font-weight: 600; color: var(--coral); }
 
-  /* Call sequence */
   .call-seq {
     background: var(--foam); border: 1px solid var(--border);
     border-radius: 6px; padding: 8px 10px; margin-top: 6px; font-size: .78rem;
@@ -112,7 +107,6 @@
   .call-seq .call-label { font-size: .7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
   .call-seq .call-num { font-family: monospace; color: var(--ocean); font-weight: 700; word-break: break-all; }
 
-  /* Notes / alerts */
   .note-box {
     background: #fffbec; border-left: 3px solid var(--amber);
     border-radius: 0 6px 6px 0; padding: 7px 10px;
@@ -130,7 +124,6 @@
   .sop-box ul { padding-left: 16px; }
   .sop-box li { margin-bottom: 2px; }
 
-  /* Crew directory */
   .crew-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 0; margin: 12px;
@@ -139,12 +132,10 @@
     background: #fff; padding: 11px 13px;
     border: 1px solid var(--border); font-size: .85rem;
   }
-  .crew-card:nth-child(odd) { border-radius: 0; }
   .crew-card .crew-name { font-weight: 700; color: var(--deep); }
   .crew-card .crew-phone { color: var(--ocean); font-size: .82rem; }
   .crew-card .crew-prop { font-size: .72rem; color: var(--muted); margin-top: 2px; }
 
-  /* SOP reminders */
   .sop-global {
     margin: 12px; background: #fff;
     border-radius: 10px; overflow: hidden;
@@ -163,13 +154,10 @@
   .pill-after { background: #cfe2ff; color: #0a2d6e; }
 
   a { color: var(--ocean); }
-  .addr-link { font-size: .78rem; color: var(--muted); }
-  .addr-link a { color: inherit; }
 </style>
 </head>
 <body>
 
-<!-- PIN Screen -->
 <div id="pin-screen">
   <div class="sp-logo">🏖️</div>
   <h1>Sandpiper Crew Briefing<br><span style="font-size:.8em;color:#9abcca">June 20–21, 2026</span></h1>
@@ -179,14 +167,13 @@
   <p>Enter your crew PIN to continue</p>
 </div>
 
-<!-- Main Content -->
 <div id="main">
   <div class="page-header">
     <div>
       <div class="page-header h1">🏖️ Sandpiper Turn Day</div>
       <div class="date">Weekend of June 20–21, 2026</div>
     </div>
-    <div style="color:#9abcca;font-size:.78rem;text-align:right">5 properties<br>Text when arrive/depart</div>
+    <div style="color:#9abcca;font-size:.78rem;text-align:right">9 properties<br>Text when arrive/depart</div>
   </div>
 
   <!-- Master Logistics -->
@@ -197,17 +184,18 @@
       <li><strong>Jennifer, Sina, Megan</strong> — Pick up gear at 35 → Turtle's Palace (1136 S Shore Dr, Surf City)</li>
       <li><strong>Morgan, Laurie</strong> — Pick up gear at 35 → Tipsy Turtle South (306 S Shore Dr, Surf City)</li>
       <li><strong>Nina</strong> — Pick up gear at 35 → Castle In The Sand (650 New River Inlet Rd, NTB)</li>
-      <li><strong>Dominique, Sheridan, Alicia</strong> — Pick up gear at 35 → Sound of Freedom (116 Oceanview Ln, NTB) → then Jordan Parker Property (836 Villas Dr, NTB)</li>
+      <li><strong>Dominique, Sheridan, Alicia</strong> — Pick up gear at 35 → Sound of Freedom (116 Oceanview Ln) → then Jordan Parker Property (836 Villas Dr, NTB)</li>
+      <li><strong>Tipsy Turtle North, Ocean Breeze, Sandy Coyote, Purple Pelican</strong> — Crew TBD; confirm with David before start</li>
     </ul>
     <div class="standby">
-      <strong>All crew:</strong> Text David when you arrive AND when you depart each property. Gear pickup at 35 before your first stop.
+      <strong>All crew:</strong> Pick up gear at 35 before your first stop. Text David when you arrive AND when you depart each property.
     </div>
   </div>
 
   <!-- ======== SURF CITY — TURTLE SHELL ======== -->
   <div class="section-label">Surf City — Turtle Shell Properties</div>
 
-  <!-- ======== TURTLE'S PALACE ======== -->
+  <!-- TURTLE'S PALACE -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -219,9 +207,7 @@
     <div class="card-body">
       <div class="info-row">
         <span class="info-label">Address</span>
-        <span class="info-val">
-          <a href="https://share.google/YIL65D2w2mNDNX3f8" target="_blank">1136 South Shore Drive, Surf City</a>
-        </span>
+        <span class="info-val"><a href="https://share.google/YIL65D2w2mNDNX3f8" target="_blank">1136 South Shore Drive, Surf City</a></span>
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
@@ -229,10 +215,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Door Codes</span>
-        <span class="info-val code">
-          Front: 3035 · Back: 0905<br>
-          <span style="font-size:.82rem;font-weight:400">Supply Room: 0905 ppl</span>
-        </span>
+        <span class="info-val code">Front: 3035 · Back: 0905<br><span style="font-size:.82rem;font-weight:400">Supply Room: 0905 ppl</span></span>
       </div>
       <div class="info-row">
         <span class="info-label">Parking</span>
@@ -264,7 +247,66 @@
     </div>
   </div>
 
-  <!-- ======== TIPSY TURTLE SOUTH ======== -->
+  <!-- TIPSY TURTLE NORTH -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="prop-name">Tipsy Turtle North <span style="font-size:.7rem;font-weight:400">(Left Side)</span></div>
+        <div class="prop-size">6 beds / 6 baths · ~4 hrs</div>
+      </div>
+      <div class="mgmt-badge">Turtle Shell</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-val"><a href="https://share.google/XjXH2jsCM8MAjQnzX" target="_blank">306 S Shore Dr, Surf City (Left)</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Crew</span>
+        <span class="info-val crew-tbd">TBD — confirm with David</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Door Code</span>
+        <span class="info-val code">2019</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Elevator</span>
+        <span class="info-val code">3603</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Storage</span>
+        <span class="info-val code">Side garage: 1956</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">WiFi</span>
+        <span class="info-val">MySpectrumWifiEB · PW: museumunite206<br><span style="font-size:.75rem;color:var(--muted)">New Brightspeed: 928a8ed3454f8288</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Gear</span>
+        <span class="info-val">Pick up gear at 35. 2 linen bins.</span>
+      </div>
+      <div class="note-box">
+        <div class="note-label">Notes</div>
+        <ul>
+          <li>Slightly less worn than South unit</li>
+          <li>Reverse hospital corner bed-making</li>
+          <li>Every room: TWO towel sets + TWO toiletry sets</li>
+          <li>Jack &amp; Jill bathroom rooms: place towels on dresser</li>
+          <li>Welcome basket: 4 koozies (2 blue, 2 pink), 2 dog treats, 2 waters, 2 ear plugs</li>
+          <li>Two throws for living room · Check pool deck</li>
+        </ul>
+      </div>
+      <div class="sop-box">
+        <ul>
+          <li>Strip beds top floor → down · Linens in bins for Turtle Shell pickup</li>
+          <li>Toilet lids down · Air to 73 · Check lower door locks · Text when arrive/depart</li>
+          <li>Empty dishwasher · Small appliances to pantry · Powder rooms: hand towel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPSY TURTLE SOUTH -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -276,9 +318,7 @@
     <div class="card-body">
       <div class="info-row">
         <span class="info-label">Address</span>
-        <span class="info-val">
-          <a href="https://share.google/XjXH2jsCM8MAjQnzX" target="_blank">306 S Shore Dr, Surf City (Right)</a>
-        </span>
+        <span class="info-val"><a href="https://share.google/XjXH2jsCM8MAjQnzX" target="_blank">306 S Shore Dr, Surf City (Right)</a></span>
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
@@ -298,8 +338,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">WiFi</span>
-        <span class="info-val">MySpectrumWifiEB · PW: museumunite206<br>
-          <span style="font-size:.75rem;color:var(--muted)">New Brightspeed: 928a8ed3454f8288</span></span>
+        <span class="info-val">MySpectrumWifiEB · PW: museumunite206<br><span style="font-size:.75rem;color:var(--muted)">New Brightspeed: 928a8ed3454f8288</span></span>
       </div>
       <div class="info-row">
         <span class="info-label">Gear</span>
@@ -313,8 +352,7 @@
           <li>Every room: TWO towel sets + TWO toiletry sets</li>
           <li>Jack &amp; Jill bathroom rooms: place towels on dresser</li>
           <li>Welcome basket: 4 koozies (2 blue, 2 pink), 2 dog treats, 2 waters, 2 ear plugs</li>
-          <li>Two throws for living room</li>
-          <li>Check pool deck</li>
+          <li>Two throws for living room · Check pool deck</li>
         </ul>
       </div>
       <div class="sop-box">
@@ -327,10 +365,10 @@
     </div>
   </div>
 
-  <!-- ======== NTB PROPERTIES ======== -->
-  <div class="section-label">North Topsail Beach Properties</div>
+  <!-- ======== NTB / COASTLINE PROPERTIES ======== -->
+  <div class="section-label">North Topsail Beach — Coastline Properties</div>
 
-  <!-- ======== CASTLE IN THE SAND ======== -->
+  <!-- CASTLE IN THE SAND -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -342,9 +380,7 @@
     <div class="card-body">
       <div class="info-row">
         <span class="info-label">Address</span>
-        <span class="info-val">
-          <a href="https://share.google/NJbcvPpNOfSRthnqw" target="_blank">650 New River Inlet Road, NTB</a>
-        </span>
+        <span class="info-val"><a href="https://share.google/NJbcvPpNOfSRthnqw" target="_blank">650 New River Inlet Road, NTB</a></span>
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
@@ -372,20 +408,177 @@
         <div class="note-label">Notes</div>
         <ul>
           <li>Check pool deck — ensure orderly and clean</li>
-          <li>Use the PIN System for inventory tracking</li>
         </ul>
       </div>
       <div class="sop-box">
         <ul>
           <li>Strip beds top floor → down · Toilet lids down · Air to 73 · Check lower door locks</li>
-          <li>Pillows on top of comforter (tuck comforter behind mattress)</li>
-          <li>Used towels/rags/mop heads in trash bag · Text when arrive/depart</li>
+          <li>Pillows on top of comforter (tuck comforter behind mattress) · Text when arrive/depart</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ======== SOUND OF FREEDOM ======== -->
+  <!-- OCEAN BREEZE -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="prop-name">Ocean Breeze</div>
+        <div class="prop-size">5 beds / 4 baths · ~3–4 hrs</div>
+      </div>
+      <div class="mgmt-badge">Coastline</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-val"><a href="https://share.google/BR6JPXTrSnElY58Xb" target="_blank">21 Porpoise Place, NTB</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Crew</span>
+        <span class="info-val crew-tbd">TBD — confirm with David</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Door Code</span>
+        <span class="info-val code">9696 <span style="font-weight:400;font-size:.8rem">(backup: 419654)</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Gear</span>
+        <span class="info-val">Pick up gear at 35. 1 bin.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Linens</span>
+        <span class="info-val">Coastline linen service. Strip all beds, stage in linen bags. Arrange duvet neatly.</span>
+      </div>
+      <div class="call-seq">
+        <div class="call-label">Coastline Call Sequence</div>
+        <div>Arrival: <span class="call-num">1-888-643-1083 ,,, 792384 ,,, 217 ,,, 1</span></div>
+        <div style="margin-top:4px">Departure: <span class="call-num">1-888-643-1083 ,,, 792384 ,,, 217 ,,, 2</span></div>
+        <div style="margin-top:4px;font-size:.74rem;color:var(--muted)">Guests supply own TP &amp; paper towels</div>
+      </div>
+      <div class="note-box">
+        <div class="note-label">Notes</div>
+        <ul>
+          <li>May need two crew depending on condition — check with David</li>
+          <li>Steam release valve — see SOP for location (open each turn)</li>
+        </ul>
+      </div>
+      <div class="sop-box">
+        <ul>
+          <li>Strip beds top floor → down · Toilet lids down · Air to 73 · Check lower door locks</li>
+          <li>Pillows on top of comforter · Used rags/mop heads in trash bag · Text when arrive/depart</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- A SANDY COYOTE -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="prop-name">A Sandy Coyote</div>
+        <div class="prop-size">7 beds / 6 baths · ~4–5 hrs</div>
+      </div>
+      <div class="mgmt-badge">Coastline</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-val"><a href="https://share.google/x93TUZofeRc82JljB" target="_blank">547 New River Inlet, NTB</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Crew</span>
+        <span class="info-val crew-tbd">TBD — confirm with David</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Door Code</span>
+        <span class="info-val code">419654</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Gear</span>
+        <span class="info-val">Pick up gear at 35. 2 bins.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Linens</span>
+        <span class="info-val">Coastline linen service. Strip all beds, stage in linen bags. Arrange duvet neatly.</span>
+      </div>
+      <div class="call-seq">
+        <div class="call-label">Coastline Call Sequence</div>
+        <div>Arrival: <span class="call-num">1-888-643-1083 ,,, 791133 ,,, 217 ,,, 1</span></div>
+        <div style="margin-top:4px">Departure: <span class="call-num">1-888-643-1083 ,,, 791133 ,,, 217 ,,, 2</span></div>
+        <div style="margin-top:4px;font-size:.74rem;color:var(--muted)">Guests supply own TP &amp; paper towels</div>
+      </div>
+      <div class="note-box">
+        <div class="note-label">Notes</div>
+        <ul>
+          <li>Use Magic Erasers on scuffs — don't over-use (will take off paint)</li>
+          <li>Check pool deck — ensure orderly and clean</li>
+        </ul>
+      </div>
+      <div class="sop-box">
+        <ul>
+          <li>Strip beds top floor → down · Toilet lids down · Air to 73 · Check lower door locks</li>
+          <li>Pillows on top of comforter · Used rags/mop heads in trash bag · Text when arrive/depart</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE PURPLE PELICAN -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="prop-name">The Purple Pelican</div>
+        <div class="prop-size">5 beds / 4 baths · ~3–4 hrs</div>
+      </div>
+      <div class="mgmt-badge">Coastline</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-val"><a href="https://share.google/0sbO3UXbx5XE8txSo" target="_blank">592 New River Inlet Rd, NTB</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Crew</span>
+        <span class="info-val crew-tbd">TBD — confirm with David</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Door Code</span>
+        <span class="info-val code">419654</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Gear</span>
+        <span class="info-val">Pick up gear at 35. 2 bins.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Linens</span>
+        <span class="info-val">Coastline linen service. Strip all beds, stage in linen bags. Arrange duvet neatly.</span>
+      </div>
+      <div class="call-seq">
+        <div class="call-label">Coastline Call Sequence</div>
+        <div>Arrival: <span class="call-num">1-888-643-1083 ,,, 791114 ,,, 217 ,,, 1</span></div>
+        <div style="margin-top:4px">Departure: <span class="call-num">1-888-643-1083 ,,, 791114 ,,, 217 ,,, 2</span></div>
+        <div style="margin-top:4px;font-size:.74rem;color:var(--muted)">Guests supply own TP &amp; paper towels · David handles the Coastline call unless otherwise noted</div>
+      </div>
+      <div class="note-box">
+        <div class="note-label">Notes</div>
+        <ul>
+          <li>Lots of stainless steel in kitchen — be careful with SprayWay, don't leave oily film on floor</li>
+          <li>Sweep/mop entryway as the <strong>very last item</strong> before departure</li>
+        </ul>
+      </div>
+      <div class="sop-box">
+        <ul>
+          <li>Strip beds top floor → down · Toilet lids down · Air to 73 · Check lower door locks</li>
+          <li>Pillows on top of comforter · Used rags/mop heads in trash bag · Text when arrive/depart</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== NTB — SANDPIPER DIRECT ======== -->
+  <div class="section-label">North Topsail Beach — Sandpiper Direct</div>
+
+  <!-- SOUND OF FREEDOM -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -428,7 +621,7 @@
     </div>
   </div>
 
-  <!-- ======== JORDAN PARKER PROPERTY ======== -->
+  <!-- JORDAN PARKER PROPERTY -->
   <div class="card">
     <div class="card-header">
       <div>
