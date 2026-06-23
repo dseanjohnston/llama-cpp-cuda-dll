@@ -49,7 +49,6 @@
   }
   .page-header h1 { font-size: 1.1rem; line-height: 1.3; }
   .page-header .date { font-size: .8rem; color: #9abcca; }
-  .sp-logo { font-size: 1.6rem; }
 
   .section-label {
     background: var(--ocean); color: #fff;
@@ -98,7 +97,6 @@
   .info-val { flex: 1; line-height: 1.4; }
   .info-val.code { font-family: monospace; font-size: .95rem; font-weight: 700; color: var(--deep); letter-spacing: .04em; }
   .info-val.crew { font-weight: 600; color: var(--ocean); }
-  .info-val.crew-tbd { font-weight: 600; color: var(--coral); }
 
   .call-seq {
     background: var(--foam); border: 1px solid var(--border);
@@ -159,7 +157,7 @@
 <body>
 
 <div id="pin-screen">
-  <div class="sp-logo">🏖️</div>
+  <div style="font-size:1.6rem">🏖️</div>
   <h1>Sandpiper Crew Briefing<br><span style="font-size:.8em;color:#9abcca">June 20–21, 2026</span></h1>
   <input type="password" id="pin-input" maxlength="4" placeholder="••••" inputmode="numeric" autocomplete="off">
   <button id="pin-btn" onclick="checkPin()">Enter</button>
@@ -170,32 +168,32 @@
 <div id="main">
   <div class="page-header">
     <div>
-      <div class="page-header h1">🏖️ Sandpiper Turn Day</div>
+      <div style="font-size:1.1rem;font-weight:700">🏖️ Sandpiper Turn Day</div>
       <div class="date">Weekend of June 20–21, 2026</div>
     </div>
-    <div style="color:#9abcca;font-size:.78rem;text-align:right">9 properties<br>Text when arrive/depart</div>
+    <div style="color:#9abcca;font-size:.78rem;text-align:right">10 properties<br>Text when arrive/depart</div>
   </div>
 
-  <!-- Master Logistics -->
   <div class="section-label">Master Logistics &amp; Crew Sequencing</div>
   <div class="overview">
     <h2>Gear Routing &amp; Crew Sequence</h2>
     <ul>
-      <li><strong>Jennifer, Sina, Megan</strong> — Pick up gear at 35 → Turtle's Palace (1136 S Shore Dr, Surf City)</li>
-      <li><strong>Morgan, Laurie</strong> — Pick up gear at 35 → Tipsy Turtle South (306 S Shore Dr, Surf City)</li>
-      <li><strong>Nina</strong> — Pick up gear at 35 → Castle In The Sand (650 New River Inlet Rd, NTB)</li>
-      <li><strong>Dominique, Sheridan, Alicia</strong> — Pick up gear at 35 → Sound of Freedom (116 Oceanview Ln) → then Jordan Parker Property (836 Villas Dr, NTB)</li>
-      <li><strong>Tipsy Turtle North, Ocean Breeze, Sandy Coyote, Purple Pelican</strong> — Crew TBD; confirm with David before start</li>
+      <li><strong>Sina, Ashley</strong> — Pick up gear at 35 → Turtle's Palace (1136 S Shore Dr, Surf City)</li>
+      <li><strong>Morgan, Laurie</strong> — Pick up gear at 35 → Tipsy Turtle North → then Tipsy Turtle South (306 S Shore Dr, Surf City)</li>
+      <li><strong>Megan</strong> — Pick up gear at 35 → 4160 Island Drive (NTB)</li>
+      <li><strong>Nina</strong> — Pick up gear at 35 → Castle In The Sand (650 NRI Rd) → then Purple Pelican (592 NRI Rd, NTB)</li>
+      <li><strong>Jan</strong> — Pick up gear at 35 → A Sandy Coyote (547 New River Inlet, NTB)</li>
+      <li><strong>Josh</strong> — Pick up gear at 35 → Ocean Breeze (21 Porpoise Place, NTB)</li>
+      <li><strong>Dominique, Sheridan, Alisia</strong> — Pick up gear at 35 → Sound of Freedom (116 Oceanview Ln) → then Jordan Parker Property (836 Villas Dr, NTB)</li>
     </ul>
     <div class="standby">
       <strong>All crew:</strong> Pick up gear at 35 before your first stop. Text David when you arrive AND when you depart each property.
     </div>
   </div>
 
-  <!-- ======== SURF CITY — TURTLE SHELL ======== -->
+  <!-- ======== SURF CITY ======== -->
   <div class="section-label">Surf City — Turtle Shell Properties</div>
 
-  <!-- TURTLE'S PALACE -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -211,7 +209,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew">Jennifer, Sina, Megan</span>
+        <span class="info-val crew">Sina, Ashley</span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Codes</span>
@@ -247,7 +245,6 @@
     </div>
   </div>
 
-  <!-- TIPSY TURTLE NORTH -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -263,7 +260,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew-tbd">TBD — confirm with David</span>
+        <span class="info-val crew">Morgan, Laurie <span class="pill pill-after">then → Tipsy South</span></span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Code</span>
@@ -306,7 +303,6 @@
     </div>
   </div>
 
-  <!-- TIPSY TURTLE SOUTH -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -322,7 +318,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew">Morgan, Laurie</span>
+        <span class="info-val crew">Morgan, Laurie <span class="pill pill-join">arriving from Tipsy North</span></span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Code</span>
@@ -365,10 +361,70 @@
     </div>
   </div>
 
-  <!-- ======== NTB / COASTLINE PROPERTIES ======== -->
+  <!-- ======== NTB COASTLINE ======== -->
   <div class="section-label">North Topsail Beach — Coastline Properties</div>
 
-  <!-- CASTLE IN THE SAND -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="prop-name">4160 Island Drive</div>
+        <div class="prop-size">7 beds / 7 baths · ~5–6 hrs</div>
+      </div>
+      <div class="mgmt-badge">Coastline</div>
+    </div>
+    <div class="card-body">
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-val"><a href="https://share.google/u6KlC8xWeiCF2BpPm" target="_blank">4160 Island Drive, NTB</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Crew</span>
+        <span class="info-val crew">Megan</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Door Code</span>
+        <span class="info-val code">3758 <span style="font-weight:400;font-size:.8rem">(backup: 419654)</span></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Gear</span>
+        <span class="info-val">Pick up gear at 35. 2 bins.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Linens</span>
+        <span class="info-val">Coastline linen service. Strip all beds, stage linens in linen bags. Arrange duvet neatly on bed.</span>
+      </div>
+      <div class="call-seq">
+        <div class="call-label">Coastline Call Sequence</div>
+        <div>Arrival: <span class="call-num">1-888-643-1083 ,,, 791460 ,,, 217 ,,, 1</span></div>
+        <div style="margin-top:4px">Departure: <span class="call-num">1-888-643-1083 ,,, 791460 ,,, 217 ,,, 2</span></div>
+        <div style="margin-top:4px;font-size:.74rem;color:var(--muted)">Guests supply own TP &amp; paper towels</div>
+      </div>
+      <div class="note-box">
+        <div class="note-label">⚠️ High-Awareness Property — Detail-Oriented Owners</div>
+        <ul>
+          <li>Air filters — change if needed (from Owner's Closet)</li>
+          <li>Replace mattress pads if needed (in Owner's Closet)</li>
+          <li>Vent register outside garage — check for black staining</li>
+          <li>Hose-rinse outside windows on main floor</li>
+          <li>Rinse and overturn two footbaths on rear hot tub deck to dry</li>
+          <li>Game room: brush pool table felt, remove stains from chalk trays</li>
+          <li>Sweep out garage as last step</li>
+          <li>On arrival: walk &amp; document — photos of any damage/missing items</li>
+          <li>12 TVs — verify all remotes present · All slider doors locked · A/C to 73</li>
+        </ul>
+      </div>
+      <div class="sop-box">
+        <ul>
+          <li>Strip beds top floor → down · Linens in linen bags for Coastline</li>
+          <li>Bathrooms first → bedrooms → common areas</li>
+          <li>Wipe cabinet fronts · Stainless cleaner on appliances · Fingerprint-free finish</li>
+          <li>Exterior: sweep all decks, wipe furniture, pool area, hot tub surround</li>
+          <li>Report mold, missing items, maintenance issues with photos · Text when arrive/depart</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-header">
       <div>
@@ -384,7 +440,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew">Nina</span>
+        <span class="info-val crew">Nina <span class="pill pill-after">then → Purple Pelican</span></span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Code</span>
@@ -396,7 +452,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Linens</span>
-        <span class="info-val">Coastline linen service. Strip all beds, stage linens in linen bags. Arrange duvet neatly on bed.</span>
+        <span class="info-val">Coastline linen service. Strip all beds, stage in linen bags. Arrange duvet neatly.</span>
       </div>
       <div class="call-seq">
         <div class="call-label">Coastline Call Sequence</div>
@@ -413,13 +469,12 @@
       <div class="sop-box">
         <ul>
           <li>Strip beds top floor → down · Toilet lids down · Air to 73 · Check lower door locks</li>
-          <li>Pillows on top of comforter (tuck comforter behind mattress) · Text when arrive/depart</li>
+          <li>Pillows on top of comforter · Used rags/mop heads in trash bag · Text when arrive/depart</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- OCEAN BREEZE -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -435,7 +490,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew-tbd">TBD — confirm with David</span>
+        <span class="info-val crew">Josh</span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Code</span>
@@ -458,7 +513,6 @@
       <div class="note-box">
         <div class="note-label">Notes</div>
         <ul>
-          <li>May need two crew depending on condition — check with David</li>
           <li>Steam release valve — see SOP for location (open each turn)</li>
         </ul>
       </div>
@@ -471,7 +525,6 @@
     </div>
   </div>
 
-  <!-- A SANDY COYOTE -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -487,7 +540,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew-tbd">TBD — confirm with David</span>
+        <span class="info-val crew">Jan</span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Code</span>
@@ -523,7 +576,6 @@
     </div>
   </div>
 
-  <!-- THE PURPLE PELICAN -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -539,7 +591,7 @@
       </div>
       <div class="info-row">
         <span class="info-label">Crew</span>
-        <span class="info-val crew-tbd">TBD — confirm with David</span>
+        <span class="info-val crew">Nina <span class="pill pill-join">arriving from Castle In The Sand</span></span>
       </div>
       <div class="info-row">
         <span class="info-label">Door Code</span>
@@ -575,10 +627,9 @@
     </div>
   </div>
 
-  <!-- ======== NTB — SANDPIPER DIRECT ======== -->
+  <!-- ======== NTB SANDPIPER DIRECT ======== -->
   <div class="section-label">North Topsail Beach — Sandpiper Direct</div>
 
-  <!-- SOUND OF FREEDOM -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -621,7 +672,6 @@
     </div>
   </div>
 
-  <!-- JORDAN PARKER PROPERTY -->
   <div class="card">
     <div class="card-header">
       <div>
@@ -651,7 +701,6 @@
         <div class="note-label">Notes</div>
         <ul>
           <li>Second stop for Dominique's crew — 6 beds, should move quickly with three people</li>
-          <li>Text David immediately on arrival for any door code questions</li>
           <li>Check all exterior access points before departing</li>
         </ul>
       </div>
@@ -673,34 +722,44 @@
       <div class="crew-prop">Sound of Freedom · Jordan Parker</div>
     </div>
     <div class="crew-card">
+      <div class="crew-name">Ashley</div>
+      <div class="crew-phone">(910) 612-7742</div>
+      <div class="crew-prop">Turtle's Palace</div>
+    </div>
+    <div class="crew-card">
       <div class="crew-name">Dominique</div>
       <div class="crew-phone">(910) 554-1789</div>
       <div class="crew-prop">Sound of Freedom · Jordan Parker</div>
     </div>
     <div class="crew-card">
-      <div class="crew-name">Jennifer</div>
-      <div class="crew-phone">(910) 467-1829</div>
-      <div class="crew-prop">Turtle's Palace</div>
+      <div class="crew-name">Jan</div>
+      <div class="crew-phone">(919) 454-4974</div>
+      <div class="crew-prop">A Sandy Coyote</div>
+    </div>
+    <div class="crew-card">
+      <div class="crew-name">Josh</div>
+      <div class="crew-phone">(919) 673-7547</div>
+      <div class="crew-prop">Ocean Breeze</div>
     </div>
     <div class="crew-card">
       <div class="crew-name">Laurie</div>
       <div class="crew-phone">(802) 738-6187</div>
-      <div class="crew-prop">Tipsy Turtle South</div>
+      <div class="crew-prop">Tipsy North · Tipsy South</div>
     </div>
     <div class="crew-card">
       <div class="crew-name">Megan</div>
       <div class="crew-phone">(252) 751-7960</div>
-      <div class="crew-prop">Turtle's Palace</div>
+      <div class="crew-prop">4160 Island Drive</div>
     </div>
     <div class="crew-card">
       <div class="crew-name">Morgan</div>
       <div class="crew-phone">(910) 991-5732</div>
-      <div class="crew-prop">Tipsy Turtle South</div>
+      <div class="crew-prop">Tipsy North · Tipsy South</div>
     </div>
     <div class="crew-card">
       <div class="crew-name">Nina</div>
       <div class="crew-phone">(860) 212-6833</div>
-      <div class="crew-prop">Castle In The Sand</div>
+      <div class="crew-prop">Castle In The Sand · Purple Pelican</div>
     </div>
     <div class="crew-card">
       <div class="crew-name">Sheridan</div>
@@ -719,7 +778,6 @@
     </div>
   </div>
 
-  <!-- ALL-PROPERTY SOP REMINDERS -->
   <div class="section-label">All-Property Sandpiper Reminders</div>
   <div class="sop-global">
     <div class="sop-global-body">
