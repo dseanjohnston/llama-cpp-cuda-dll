@@ -152,6 +152,45 @@
   .pill-after { background: #cfe2ff; color: #0a2d6e; }
 
   a { color: var(--ocean); }
+
+  /* SMS All Call */
+  .all-call-btn {
+    background: var(--coral); color: #fff; border: none;
+    padding: 7px 11px; border-radius: 8px; font-size: .75rem;
+    font-weight: 700; cursor: pointer; white-space: nowrap;
+    -webkit-tap-highlight-color: transparent; flex-shrink: 0;
+  }
+  .all-call-btn:active { opacity: .8; }
+
+  #all-call-modal {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,.55); align-items: flex-end; justify-content: center;
+  }
+  #all-call-modal.open { display: flex; }
+  .all-call-sheet {
+    background: #fff; border-radius: 16px 16px 0 0;
+    padding: 20px 16px 36px; width: 100%; max-width: 480px;
+  }
+  .all-call-sheet h2 { font-size: 1rem; color: var(--deep); margin-bottom: 3px; }
+  .all-call-sheet .ac-sub { font-size: .78rem; color: var(--muted); margin-bottom: 12px; }
+  #all-call-msg {
+    width: 100%; min-height: 96px; padding: 10px 12px;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    font-size: .95rem; font-family: inherit; resize: vertical;
+    color: var(--text); outline: none; line-height: 1.5;
+  }
+  #all-call-msg:focus { border-color: var(--ocean); }
+  .ac-to { font-size: .7rem; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .all-call-actions { display: flex; gap: 10px; margin-top: 14px; }
+  .btn-send {
+    flex: 1; background: var(--sage); color: #fff; border: none;
+    padding: 13px; border-radius: 10px; font-size: 1rem;
+    font-weight: 700; cursor: pointer;
+  }
+  .btn-cancel {
+    background: #ebebeb; color: var(--text); border: none;
+    padding: 13px 16px; border-radius: 10px; font-size: 1rem; cursor: pointer;
+  }
 </style>
 </head>
 <body>
@@ -171,7 +210,10 @@
       <div style="font-size:1.1rem;font-weight:700">🏖️ Sandpiper Turn Day</div>
       <div class="date">Weekend of June 20–21, 2026</div>
     </div>
-    <div style="color:#9abcca;font-size:.78rem;text-align:right">10 properties<br>Text when arrive/depart</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+      <div style="color:#9abcca;font-size:.78rem;text-align:right">10 properties · text arrive/depart</div>
+      <button class="all-call-btn" onclick="openAllCall()">📢 SMS All Crew</button>
+    </div>
   </div>
 
   <div class="section-label">Master Logistics &amp; Crew Sequencing</div>
@@ -801,6 +843,19 @@
   </div>
 </div>
 
+<div id="all-call-modal" role="dialog" aria-modal="true">
+  <div class="all-call-sheet">
+    <h2>SMS All Call</h2>
+    <div class="ac-sub">Opens Messages with all crew pre-filled — tap Send from there.</div>
+    <textarea id="all-call-msg" placeholder="Type your message to all crew…"></textarea>
+    <div class="ac-to">To: Alisia · Ashley · Dominique · Jan · Josh · Laurie · Megan · Morgan · Nina · Sheridan · Sina</div>
+    <div class="all-call-actions">
+      <button class="btn-cancel" onclick="closeAllCall()">Cancel</button>
+      <button class="btn-send" onclick="sendAllCall()">Open in Messages</button>
+    </div>
+  </div>
+</div>
+
 <script>
   const PIN = '8501';
   function checkPin() {
@@ -815,6 +870,38 @@
   }
   document.getElementById('pin-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') checkPin();
+  });
+
+  const CREW_SMS = [
+    '+19103813036', // Alisia
+    '+19106127742', // Ashley
+    '+19105541789', // Dominique
+    '+19194544974', // Jan
+    '+19196737547', // Josh
+    '+18027386187', // Laurie
+    '+12527517960', // Megan
+    '+19109915732', // Morgan
+    '+18602126833', // Nina
+    '+19103786198', // Sheridan
+    '+19103587922', // Sina
+  ];
+
+  function openAllCall() {
+    document.getElementById('all-call-modal').classList.add('open');
+    setTimeout(function() { document.getElementById('all-call-msg').focus(); }, 100);
+  }
+  function closeAllCall() {
+    document.getElementById('all-call-modal').classList.remove('open');
+  }
+  function sendAllCall() {
+    const msg = document.getElementById('all-call-msg').value.trim();
+    const addresses = CREW_SMS.join(',');
+    const url = 'sms:/open?addresses=' + addresses + (msg ? '&body=' + encodeURIComponent(msg) : '');
+    window.location.href = url;
+    closeAllCall();
+  }
+  document.getElementById('all-call-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeAllCall();
   });
 </script>
 </body>
